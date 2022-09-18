@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.87.0">
+    <title>Login con Node + JWT + MySQL</title>
+    <!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="css/dashboard.css" rel="stylesheet">
+  </head>
+ 
+
+  <body>
+ 
+    <table class="table">
+     
+      <thead>
+        <tr>
+          <th scope="col">Usuario</th>
+          <th scope="col">Sitio</th>
+          <th scope="col">Reseña</th>
+          <th scope="col">Numero de strellas</th>
+          <th scope="col">Reseña n°</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% results.forEach((results)=>{ %>
+        <tr>
+          <th scope="row"><%= results.user %></th>
+          <td> <%= results.texto %>  </td>
+          <td><%= results.descripcion %></td>
+          <td><%= results.ranking %></td>
+          <td><%= results.id_resena %></td>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+
+
+
+
+  </body>
+
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+</html>

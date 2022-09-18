@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <style>
+    body {  
+      /* display: flex; */
+      align-items: center;
+      padding-top: 40px;
+      padding-bottom: 40px;
+      background-color:rgba(255,255,255,0.95);
+    }
+    </style>
+    <title>Login con Node + JWT + MySQL</title>
+  </head>
+  <body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 shadow-lg p-3 mb-5">
+
+          <div class="card border-primary">
+            <div class="card-header bg-primary text-white">Registrarse</div>
+            <div class="card-body text-primary">
+              <form action="/register" method="POST">        
+                <div class="mb-3">
+                    <label for="email" class="form-label">E-mail</label>
+                    <input id="email" name="email" type="email" class="form-control" aria-describedby="emailHelp">              
+                </div>
+                <div class="mb-3">
+                    <label for="user" class="form-label">Nombre de usuario</label>
+                    <input id="user" name="user" type="text" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="pass" class="form-label">Password</label>
+                    <input id="pass" name="pass" type="password" class="form-control">
+                </div>       
+                <div class="mb-3">
+                  <label for="sex" class="form-label">Sexo</label>
+                  <select name="sex">
+                    <option value="1">Femenino</option>
+                    <option value="2">Masculino</option>
+                    <option value="3">Otro</option>
+                    </select>              
+              </div>
+
+              <div class="mb-3">
+                <label for="fecha_nac" class="form-label">Fecha de Nacimiento</label>
+                <input type="date" name="fecha_nac">
+              </div>
+              <div class="mb-3">
+                <label for="interes" class="form-label">Interes</label>
+                <select name="interes">
+                  <option value="1">Gastronomia</option>
+                  <option value="2">Hoteleria</option>
+                  <option value="3">Espectaulos</option>
+                  <option value="2">Deportes</option>
+                  <option value="3">Parques y paseos</option>
+                  </select> 
+              </div>   
+              <div class="mb-3">
+                <label for="pais_origen" class="form-label">Pais de Origen</label>
+                <select name="pais_origen">
+                  <option value="1">Argentina</option>
+                  <option value="2">Uruguay</option>
+                  <option value="3">Chile</option>
+                  <option value="2">España</option>
+                  <option value="3">Pararaguay</option>
+                  <option value="3">Peru</option>
+                  <option value="2">Colombia</option>
+                  <option value="3">Israel</option>
+                  <option value="3">Otro</option>
+                  </select> 
+            </div>
+
+            </div>
+
+            <div class="card-footer bg-transparent border-primary">
+              <a href="/" type="button" class="btn btn-secondary">Cancelar</a>
+              <button type="submit" class="btn btn-primary">Registrar</button>
+            </div>
+            </form>
+          </div>   
+    
+        </div>
+    </div>
+</div>
+
+ 
+    
+    <script src="js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

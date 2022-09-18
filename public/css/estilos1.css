@@ -1,0 +1,50 @@
+p.ret1 
+{
+
+ 	font-family: sans-serif;
+ 	font-size: 12px;
+ 	color: red;
+ 	font-weight: bold;
+ }
+ 
+
+ p.ret2
+{
+
+ 	font-family: sans-serif;
+ 	font-size: 22px;
+ 	color: yellow;
+ 	font-weight: bold;
+ 	text-align: center;
+ }
+
+ .zoom1 {
+    transition: transform .2s; 
+    margin: 0;
+
+}
+ 
+.zoom1:hover {
+    transform: scale(1.05); 
+    margin: 0;
+}
+
+ .zoom2 {
+    transition: transform .2s; 
+    margin: 0;
+
+}
+ 
+.zoom2:hover {
+    transform: scale(1.05); 
+    margin: 0;
+}
+
+img.p1{
+ width: auto; 
+ max-height: 75px; 
+}
+
+div.cat {
+ height:80px
+}

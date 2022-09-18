@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <style>
+    body {  
+      /* display: flex; */
+      align-items: center;
+      padding-top: 40px;
+      padding-bottom: 40px;
+      background-color:rgba(255,255,255,0.95);
+    }
+    </style>
+    <title>Login con Node + JWT + MySQL</title>
+  </head>
+  <body>
+
+    <div class="navbar-nav">
+      <div class="nav-item text-nowrap">
+        <a type="button" class="px-3 btn btn-danger" href="logout">Logout</a>
+      </div>
+    </div>
+
+    <h2>Bienvenido:</h2>  
+
+
+       
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 shadow-lg p-3 mb-5">
+
+          <div class="card border-primary">
+            <div class="card-header bg-primary text-white">Reseña</div>
+            <div class="card-body text-primary">
+              <form action="/hot" method="POST">        
+
+
+                <div>
+
+                  <div class="mb-3">
+                    <label for="sitio" class="form-label">Sitio</label>
+                    <select name="sitio">
+                      <% results.forEach((results)=>{ %>
+                    <option value=" <%= results.id_sitio %> "> <%= results.texto %> </option> <% }) %>
+                    </select>
+                  </div>
+
+
+
+
+                <div class="mb-3">
+                  <label for="id_usuario" class="form-label"></label>      
+                  <input type="hidden" name="id_usuario" value=" <%= results[0].id %> "> </input> 
+                </div>
+
+
+              <div class="mb-3">
+                <label for="pais_origen" class="form-label">Reseña</label>
+                <input type="text" id="descripcion" name="descripcion">
+              </div>
+
+
+              <div class="mb-3">
+                <label for="interes" class="form-label">Estrellas</label>
+                <select name="ranking">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option></select>
+              </div>   
+
+
+            </div>
+
+            <div class="card-footer bg-transparent border-primary">
+              <a href="/" type="button" class="btn btn-secondary">Cancelar</a>
+              <button type="submit" class="btn btn-primary">Crear Reseña</button>
+            </div>
+
+
+
+            
+
+
+            </form>
+          </div>   
+    
+        </div>
+    </div>
+</div>
+
+<tbody>
+
+
+</tbody>
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+  </body>
+</html>
