@@ -1,156 +1,112 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.87.0">
-    <title>Login con Node + JWT + MySQL</title>
-    <!-- Bootstrap core CSS -->
-<link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-    </style>
-
-    
-    <!-- Custom styles for this template -->
-    <link href="css/dashboard.css" rel="stylesheet">
-  </head>
- 
-
-  <body class="p-3 mb-2 bg-primary text-white">
-
-    <header class="navbar navbar-dark sticky-top bg-primary flex-md-nowrap p-0 shadow">
-      <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Company name</a>
-      <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-     
-      <div class="navbar-nav">
-        <div class="nav-item text-nowrap">
-          <a type="button" class="px-3 btn btn-danger" href="logout">Logout</a>
-        </div>
-      </div>
-    </header>
+<head>
+   <meta charset="utf-8"/>
+   <link rel="stylesheet" href="css/bootstrap.min.css">
+   <link rel="stylesheet" href="css/estilos1.css">
+   <title>Session Trip</title>    
+</head>
 
 
-    <div class="container">
-   <div class="row">
-   
-   
-   <ul class="nav justify-content-left">
+<body class="p-3 mb-2 bg-info text-white">
+
+
+
+
+ <div class="container">
+<div class="row">
+
+
+<ul class="nav justify-content-left">
+<li class="nav-item">
+ <div class="zoom2"><div class="cat"><a href="http://localhost:3000/"><img class="p1" src="img/logo3.jpg">
+</a>
+</div></div>
+</li>
+<li class="nav-item">
+ <a class="nav-link active" href="#"><p class="ret1">Gastronomia</p></a>
+</li>
+<li class="nav-item">
+ <a class="nav-link" href="#"><p class="ret1">Hoteleria</p></a>
+</li>
+<li class="nav-item">
+ <a class="nav-link" href="#"><p class="ret1">Espectaculos</p></a>
+</li>
+<li class="nav-item">
+ <a class="nav-link" href="#"><p class="ret1">Deportes</p></a>
+</li>
+<li class="nav-item">
+ <a class="nav-link" href="#"><p class="ret1">Parques y Paseos</p></a>
+</li>
+ <li class="nav-item">
+ <a class="nav-link disabled" href="#"><p class="ret1"></p></a>
+</li>
    <li class="nav-item">
-    <div class="zoom2"><div class="cat"><img class="p1" src="img/logoRosariotrip.jpg"></div></div>
-   </li>
-   <li class="nav-item">
-    <a class="nav-link active" href="#"><p class="ret1">Gastronomia</p></a>
-   </li>
-   <li class="nav-item">
-    <a class="nav-link" href="#"><p class="ret1">Hoteleria</p></a>
-   </li>
-   <li class="nav-item">
-    <a class="nav-link" href="#"><p class="ret1">Espectaculos</p></a>
-   </li>
-   <li class="nav-item">
-    <a class="nav-link" href="#"><p class="ret1">Deportes</p></a>
-   </li>
-   <li class="nav-item">
-    <a class="nav-link" href="http://localhost:3000/pp"><p class="ret1">Parques y Paseos</p></a>
-   </li>
-    <li class="nav-item">
-    <a class="nav-link disabled" href="#"><p class="ret1"></p></a>
-   </li>
+ <a class="nav-link disabled" href="#"><p class="ret1"></p></a>
+</li>
+
       <li class="nav-item">
-    <a class="nav-link disabled" href="#"><p class="ret1"></p></a>
-   </li>
-      <li class="nav-item">
-    <a class="nav-link disabled" href="#"><p class="ret1"></p></a>
-   </li>
-        <li class="nav-item">
-    <a class="nav-link disabled" href="#"><p class="ret1"></p></a>
-   </li>
+ <a class="nav-link disabled" href="#"><p class="ret1"></p></a>
+</li>
+     <li class="nav-item">
+ <a class="nav-link disabled" href="#"><p class="ret1"></p></a>
+</li>
          <li class="nav-item">
-    <a class="nav-link disabled" href="#"><p class="ret1"></p></a>
-   </li>
-        <li class="nav-item">
-    <a class="nav-link disabled" href="#"><p class="ret1"></p></a>
-   </li>
-            <li class="nav-item">
-    <a class="nav-link disabled" href="#"><p class="ret1"></p></a>
-   </li>
-        <li class="nav-item">
-    <a class="nav-link disabled" href="#"><p class="ret1"></p></a>
-   </li>
-      <li class="nav-item">
-    <a class="nav-link" href="http://localhost:3000/register"><p class="ret1">Registrarse</p></a>
-   </li>
-    <li class="nav-item">
-    <a class="nav-link" href="http://localhost:3000/login"><p class="ret1">Iniciar Sesion</p></a>
-   </li>
-   </ul>
-
-   <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-    <h2>Dashboard</h2>
-    <h2>Bienvenido:
-      <% if (user) { %>
-        <span class="badge bg-success"><%= user.user %></span>
-        <input type="hidden" name="id_0" value="<%= user.id %>"> 
-      </input> 
-      <% } %>
-    </h2>
-  </div> 
-   
-   
-   
-   
-   
-   
-    <div class="col-sm">
-      <p class="ret2">Gastronomia <br><br>
-      <img class="zoom1" src="img/ff1.jpg"></p>
-    </div>
-    <div class="col-sm">
-      <p class="ret2">Hoteleria <br><br>
-      <img class="zoom1" src="img/ff2.jpg"></p>
-    </div>
-    <div class="col-sm">
-      <p class="ret2">Espectaculos <br><br>
-      <img class="zoom1" src="img/ff3.jpg"></p>
-    </div>
-    <div class="col-sm">
-      <p class="ret2">Deportes <br><br>
-      <img class="zoom1" src="img/ff4.jpg"></p>
-    </div>
-    <div class="col-sm">
-      <p class="ret2">Parques y Paseos <br><br>
-      <img class="zoom1" src="img/ff5.jpg"></p>
-    </div>
-   </div>
-   </div>
-   
-   
-
-   
-   
-   </body>
+ <a class="nav-link disabled" href="#"><p class="ret1"></p></a>
+</li>
+     <li class="nav-item">
+ <a class="nav-link disabled" href="#"><p class="ret1"></p></a>
+</li>
+   <li class="nav-item">
+ <a class="nav-link" href="http://localhost:3000/register"><p class="ret1">Registrarse</p></a>
+</li>
+ <li class="nav-item">
+ <a class="nav-link" href="http://localhost:3000/login"><p class="ret1">Iniciar Sesion</p></a>
+</li>
+</ul>
 
 
 
-  </body>
+
+<div><span class="badge bg-success"><h2></span>
+  Bienvenido       <% if (user) { %>
+    <%= user.user %>   <% } %>
+
+    , elija un rubro en el cual quiera realizar una reseña</span></h2>
+</div>
+<br>
+<br>
+<br>
+
+ <div class="col-sm"><span class="badge bg-danger">
+   <p class="ret2">Gastronomia <br><br><a href="gas">
+   <img class="zoom1" src="img/ff1.jpg"></a></p></span>
+ </div>
+ <div class="col-sm"><span class="badge bg-primary">
+   <p class="ret2">Hoteleria <br><br><a href="hot">
+   <img class="zoom1" src="img/ff2.jpg"></a></p></span>
+ </div>
+ <div class="col-sm"><span class="badge bg-secondary">
+   <p class="ret2">Espectaculos <br><br><a href="esp">
+   <img class="zoom1" src="img/ff3.jpg"></a></p></span>
+ </div>
+ <div class="col-sm"><span class="badge bg-warning">
+   <p class="ret2">Deportes <br><br><a href="dep">
+   <img class="zoom1" src="img/ff4.jpg"></a></p></span>
+ </div>
+ <div class="col-sm"><span class="badge bg-success">
+   <p class="ret2">Parques y Paseos <br><br><a href="pp">
+   <img class="zoom1" src="img/ff5.jpg"></a></p></span>
+ </div>
+</div>
+</div>
+
+
+
+</body>
+
+
+
 
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
